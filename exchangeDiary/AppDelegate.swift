@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true //キーボード
         sleep(2)
         
-        //firebase初期導入とIQKeyboardManager導入完了!!
+        //firebase初期導入とIQKeyboardManager導入完了 test
         
         return true
     }

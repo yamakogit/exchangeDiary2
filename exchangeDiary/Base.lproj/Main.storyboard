@@ -65,7 +65,7 @@
         <!--相手の日記-->
         <scene sceneID="zjB-DI-t82">
             <objects>
-                <viewController id="jEq-H6-eiX" customClass="ViewController" customModule="exchangeDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jEq-H6-eiX" customClass="PartnerDiaryVC" customModule="exchangeDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OxC-3k-9mF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,8 +149,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="buttonFrame" translatesAutoresizingMaskIntoConstraints="NO" id="4V3-jv-4Hw">
                                 <rect key="frame" x="29" y="717" width="335" height="46"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="まとめてみる✈️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaK-eL-H6B">
-                                <rect key="frame" x="140" y="730" width="113" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定✈️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaK-eL-H6B">
+                                <rect key="frame" x="170" y="730" width="53" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -190,6 +190,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="相手の日記" id="KYI-S9-kxz"/>
                     <connections>
+                        <outlet property="dateLabel" destination="jAv-VK-4zS" id="nXW-Ok-IFV"/>
+                        <outlet property="imageView" destination="Fx8-eQ-uzU" id="FV6-fy-7Qx"/>
+                        <outlet property="messageLabel" destination="HX0-VX-y1K" id="hcc-wE-oMG"/>
+                        <outlet property="titleLabel" destination="6iw-d3-f43" id="5hz-sf-mq1"/>
+                        <outlet property="userNameLabel" destination="XOj-7p-EGt" id="56p-s3-9ZT"/>
                         <segue destination="3SX-ZH-nL6" kind="show" id="8yp-ZE-q9W"/>
                     </connections>
                 </viewController>
@@ -218,7 +223,7 @@
         <!--自分の日記-->
         <scene sceneID="cfN-0b-uIG">
             <objects>
-                <viewController id="PpI-YK-5dK" customClass="ViewController" customModule="exchangeDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PpI-YK-5dK" customClass="MyDiaryVC" customModule="exchangeDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l2k-bi-KAP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,8 +307,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="buttonFrame" translatesAutoresizingMaskIntoConstraints="NO" id="tTZ-0k-xBO">
                                 <rect key="frame" x="29" y="717" width="335" height="46"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="まとめてみる✈️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpI-2M-WoM">
-                                <rect key="frame" x="140" y="730" width="113" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定✈️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpI-2M-WoM">
+                                <rect key="frame" x="170" y="730" width="53" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -343,6 +348,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="自分の日記" id="sdV-RW-Ga6"/>
                     <connections>
+                        <outlet property="dateLabel" destination="FZP-j1-S3l" id="e5D-zM-mne"/>
+                        <outlet property="imageView" destination="Z5w-GE-3eA" id="OdJ-Bv-QqF"/>
+                        <outlet property="messageLabel" destination="nbL-Da-TuI" id="DXv-Gw-pqe"/>
+                        <outlet property="titleLabel" destination="IYo-72-oji" id="EGw-2f-dnY"/>
+                        <outlet property="userNameLabel" destination="lCx-A6-OUH" id="T9e-Gp-XKP"/>
                         <segue destination="3SX-ZH-nL6" kind="show" id="DF8-3y-XzO"/>
                     </connections>
                 </viewController>
@@ -353,7 +363,7 @@
         <!--相手からのメッセージ-->
         <scene sceneID="0CH-8x-eYJ">
             <objects>
-                <viewController id="dKJ-P9-1Bi" customClass="ViewController" customModule="exchangeDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dKJ-P9-1Bi" customClass="PartnerDiaryVC" customModule="exchangeDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cgN-nS-6NT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,6 +433,9 @@
                                 <rect key="frame" x="29" y="687" width="335" height="46"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="QiP-jh-QLP" kind="show" id="LJT-bg-4wp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9BZ-KN-0HM"/>
@@ -459,7 +472,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="相手からのメッセージ" id="ga8-FD-o2B"/>
                     <connections>
-                        <segue destination="QiP-jh-QLP" kind="show" id="h5E-iU-aVG"/>
+                        <outlet property="dateLabel" destination="DRF-Kf-uZc" id="LkU-gz-L1u"/>
+                        <outlet property="imageView" destination="UAy-pm-b1m" id="Hnh-2P-pa8"/>
+                        <outlet property="messageLabel" destination="x1I-QM-gO3" id="O4c-sd-NgO"/>
+                        <outlet property="titleLabel" destination="T9N-w0-jV1" id="cAS-hz-Yar"/>
+                        <outlet property="userNameLabel" destination="OA2-Y4-4oN" id="CSf-92-ggn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZF-qq-o5U" sceneMemberID="firstResponder"/>
@@ -597,7 +614,7 @@
                                 <color key="textColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日記のタイトル" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFs-7w-Xho">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFs-7w-Xho">
                                 <rect key="frame" x="54" y="185" width="285" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -610,9 +627,9 @@
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">１行目１行目１行目１行目
-２行目２行目２行目２行目
-３行目３行目３行目３行目</string>
+                                        <string key="content">L
+L
+L</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="BIZUDGothic-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="13" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -713,6 +730,12 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXq-vS-lAs">
+                                <rect key="frame" x="141" y="178" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vG3-Pw-HMT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -782,7 +805,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8yp-ZE-q9W"/>
+        <segue reference="DF8-3y-XzO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="buttonFrame" width="335" height="46"/>

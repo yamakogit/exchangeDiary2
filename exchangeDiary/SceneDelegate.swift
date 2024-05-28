@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var authListener: Any!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,6 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        autoLogin()
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -45,6 +51,60 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    
+    func autoLogin() {
+        authListener = Auth.auth().addStateDidChangeListener({ auth, user in
+            //その後呼ばれないようにデタッチする
+            Auth.auth().removeStateDidChangeListener(self.authListener! as! NSObjectProtocol)
+            if user != nil {
+                DispatchQueue.main.async {
+                    print("loginされています")
+                    //ログインされているのでメインのViewへ
+                    Task {
+                        do { //これに対するもの try await FirebaseClient.shared.getUserData()
+                            
+                            let userData = try await FirebaseClient.shared.getUserData()
+                            let userCoordinateDict = userData.latestOpenedDate
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "yyyy.MM.dd"
+                            let date = dateFormatter.string(from: Date())
+                            
+                            if date == userCoordinateDict {
+                                //trip済
+                                self.goHome()
+                                
+                            } else {
+                                //今日初めて開いた
+                                let calendar = Calendar.current
+                                let now = Date()
+                                let components = calendar.dateComponents([.hour], from: now)
+                                let tripHour = UserDefaults.standard.integer(forKey: "tripHour")
+                                
+                                if let hour = components.hour, hour >= tripHour {
+                                    //指定した時間以降
+                                } else {
+                                    //指定した時間より前
+                                    self.goHome()
+                                }
+                            }
+                            
+                        } catch {
+                            print("Error fetching spot data: \(error)")
+                            //getUserData() - エラー
+                            self.goHome()
+                        }
+                    }
+                }
+                
+            } else {
+                //認証されていなければ初期画面表示
+                //ログインされていない
+                print("loginされていません")
+                self.goRegister()
+            }
+        })
     }
 
 

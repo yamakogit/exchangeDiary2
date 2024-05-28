@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E108FB7E2C04288600E7874B /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108FB7D2C04288600E7874B /* FirebaseClient.swift */; };
 		E121729E2C00CE5000821AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121729D2C00CE5000821AF7 /* AppDelegate.swift */; };
 		E12172A02C00CE5000821AF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121729F2C00CE5000821AF7 /* SceneDelegate.swift */; };
-		E12172A22C00CE5000821AF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12172A12C00CE5000821AF7 /* ViewController.swift */; };
 		E12172A52C00CE5000821AF7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E12172A42C00CE5000821AF7 /* Base */; };
 		E12172A72C00CE5100821AF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E12172A62C00CE5100821AF7 /* Assets.xcassets */; };
 		E12172AA2C00CE5100821AF7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E12172A92C00CE5100821AF7 /* Base */; };
+		E188D20B2C062537005DD7E8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E188D20A2C062537005DD7E8 /* Kingfisher */; };
+		E188D20F2C062853005DD7E8 /* PartnerDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E188D20E2C062853005DD7E8 /* PartnerDiaryVC.swift */; };
+		E188D2112C062856005DD7E8 /* MyDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E188D2102C062856005DD7E8 /* MyDiaryVC.swift */; };
 		E18BE5082C0327B700419219 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E18BE5072C0327B700419219 /* FirebaseAnalytics */; };
 		E18BE50A2C0327B700419219 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E18BE5092C0327B700419219 /* FirebaseAuth */; };
 		E18BE50C2C0327B700419219 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E18BE50B2C0327B700419219 /* FirebaseFirestore */; };
@@ -26,14 +29,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E108FB7D2C04288600E7874B /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		E121729A2C00CE5000821AF7 /* exchangeDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exchangeDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E121729D2C00CE5000821AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E121729F2C00CE5000821AF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E12172A12C00CE5000821AF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E12172A42C00CE5000821AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E12172A62C00CE5100821AF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E12172A92C00CE5100821AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E12172AB2C00CE5100821AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E188D20E2C062853005DD7E8 /* PartnerDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDiaryVC.swift; sourceTree = "<group>"; };
+		E188D2102C062856005DD7E8 /* MyDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryVC.swift; sourceTree = "<group>"; };
 		E18BE5152C03291300419219 /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
 		E18BE5172C03297A00419219 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +51,7 @@
 				E18BE5102C0327B700419219 /* FirebaseFirestoreSwift in Frameworks */,
 				E18BE51B2C032A2B00419219 /* IQKeyboardManagerSwift in Frameworks */,
 				E18BE5142C0327B700419219 /* FirebaseStorageCombine-Community in Frameworks */,
+				E188D20B2C062537005DD7E8 /* Kingfisher in Frameworks */,
 				E18BE5082C0327B700419219 /* FirebaseAnalytics in Frameworks */,
 				E18BE50E2C0327B700419219 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				E18BE50A2C0327B700419219 /* FirebaseAuth in Frameworks */,
@@ -78,7 +84,9 @@
 			children = (
 				E121729D2C00CE5000821AF7 /* AppDelegate.swift */,
 				E121729F2C00CE5000821AF7 /* SceneDelegate.swift */,
-				E12172A12C00CE5000821AF7 /* ViewController.swift */,
+				E188D20E2C062853005DD7E8 /* PartnerDiaryVC.swift */,
+				E188D2102C062856005DD7E8 /* MyDiaryVC.swift */,
+				E108FB7D2C04288600E7874B /* FirebaseClient.swift */,
 				E12172A32C00CE5000821AF7 /* Main.storyboard */,
 				E12172A62C00CE5100821AF7 /* Assets.xcassets */,
 				E12172A82C00CE5100821AF7 /* LaunchScreen.storyboard */,
@@ -114,6 +122,7 @@
 				E18BE5112C0327B700419219 /* FirebaseStorage */,
 				E18BE5132C0327B700419219 /* FirebaseStorageCombine-Community */,
 				E18BE51A2C032A2B00419219 /* IQKeyboardManagerSwift */,
+				E188D20A2C062537005DD7E8 /* Kingfisher */,
 			);
 			productName = exchangeDiary;
 			productReference = E121729A2C00CE5000821AF7 /* exchangeDiary.app */;
@@ -146,6 +155,7 @@
 			packageReferences = (
 				E18BE5062C0327B700419219 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				E18BE5192C032A2A00419219 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				E188D2092C062537005DD7E8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = E121729B2C00CE5000821AF7 /* Products */;
 			projectDirPath = "";
@@ -176,9 +186,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E12172A22C00CE5000821AF7 /* ViewController.swift in Sources */,
 				E121729E2C00CE5000821AF7 /* AppDelegate.swift in Sources */,
+				E188D20F2C062853005DD7E8 /* PartnerDiaryVC.swift in Sources */,
 				E12172A02C00CE5000821AF7 /* SceneDelegate.swift in Sources */,
+				E188D2112C062856005DD7E8 /* MyDiaryVC.swift in Sources */,
+				E108FB7E2C04288600E7874B /* FirebaseClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +415,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E188D2092C062537005DD7E8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		E18BE5062C0327B700419219 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -422,6 +442,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E188D20A2C062537005DD7E8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E188D2092C062537005DD7E8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		E18BE5072C0327B700419219 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E18BE5062C0327B700419219 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

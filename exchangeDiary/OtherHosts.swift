@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OtherHostsVC {
+class OtherHosts {
 
     
     //activityIndicatorView

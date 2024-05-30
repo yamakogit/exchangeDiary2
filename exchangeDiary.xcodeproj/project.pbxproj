@@ -16,6 +16,8 @@
 		E188D20B2C062537005DD7E8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E188D20A2C062537005DD7E8 /* Kingfisher */; };
 		E188D20F2C062853005DD7E8 /* PartnerDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E188D20E2C062853005DD7E8 /* PartnerDiaryVC.swift */; };
 		E188D2112C062856005DD7E8 /* MyDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E188D2102C062856005DD7E8 /* MyDiaryVC.swift */; };
+		E188D2132C06AA0E005DD7E8 /* writeDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E188D2122C06AA0E005DD7E8 /* writeDiaryVC.swift */; };
+		E188D2152C073FF8005DD7E8 /* OtherHosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E188D2142C073FF8005DD7E8 /* OtherHosts.swift */; };
 		E18BE5082C0327B700419219 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E18BE5072C0327B700419219 /* FirebaseAnalytics */; };
 		E18BE50A2C0327B700419219 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E18BE5092C0327B700419219 /* FirebaseAuth */; };
 		E18BE50C2C0327B700419219 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E18BE50B2C0327B700419219 /* FirebaseFirestore */; };
@@ -26,6 +28,9 @@
 		E18BE5162C03291300419219 /* GoogleService-Info-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = E18BE5152C03291300419219 /* GoogleService-Info-Debug.plist */; };
 		E18BE5182C03297A00419219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E18BE5172C03297A00419219 /* GoogleService-Info.plist */; };
 		E18BE51B2C032A2B00419219 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E18BE51A2C032A2B00419219 /* IQKeyboardManagerSwift */; };
+		E1F30DD62C07478B0043320A /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F30DD52C07478B0043320A /* SignupVC.swift */; };
+		E1F30DDA2C07479C0043320A /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F30DD92C07479C0043320A /* SigninVC.swift */; };
+		E1F30DDC2C0747AD0043320A /* groupManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F30DDB2C0747AD0043320A /* groupManagerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +44,13 @@
 		E12172AB2C00CE5100821AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E188D20E2C062853005DD7E8 /* PartnerDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDiaryVC.swift; sourceTree = "<group>"; };
 		E188D2102C062856005DD7E8 /* MyDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryVC.swift; sourceTree = "<group>"; };
+		E188D2122C06AA0E005DD7E8 /* writeDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeDiaryVC.swift; sourceTree = "<group>"; };
+		E188D2142C073FF8005DD7E8 /* OtherHosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHosts.swift; sourceTree = "<group>"; };
 		E18BE5152C03291300419219 /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
 		E18BE5172C03297A00419219 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E1F30DD52C07478B0043320A /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		E1F30DD92C07479C0043320A /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
+		E1F30DDB2C0747AD0043320A /* groupManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupManagerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +94,14 @@
 			children = (
 				E121729D2C00CE5000821AF7 /* AppDelegate.swift */,
 				E121729F2C00CE5000821AF7 /* SceneDelegate.swift */,
-				E188D20E2C062853005DD7E8 /* PartnerDiaryVC.swift */,
 				E188D2102C062856005DD7E8 /* MyDiaryVC.swift */,
+				E188D20E2C062853005DD7E8 /* PartnerDiaryVC.swift */,
+				E188D2122C06AA0E005DD7E8 /* writeDiaryVC.swift */,
 				E108FB7D2C04288600E7874B /* FirebaseClient.swift */,
+				E188D2142C073FF8005DD7E8 /* OtherHosts.swift */,
+				E1F30DD52C07478B0043320A /* SignupVC.swift */,
+				E1F30DD92C07479C0043320A /* SigninVC.swift */,
+				E1F30DDB2C0747AD0043320A /* groupManagerVC.swift */,
 				E12172A32C00CE5000821AF7 /* Main.storyboard */,
 				E12172A62C00CE5100821AF7 /* Assets.xcassets */,
 				E12172A82C00CE5100821AF7 /* LaunchScreen.storyboard */,
@@ -186,11 +201,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F30DDC2C0747AD0043320A /* groupManagerVC.swift in Sources */,
+				E188D2152C073FF8005DD7E8 /* OtherHosts.swift in Sources */,
 				E121729E2C00CE5000821AF7 /* AppDelegate.swift in Sources */,
+				E1F30DD62C07478B0043320A /* SignupVC.swift in Sources */,
 				E188D20F2C062853005DD7E8 /* PartnerDiaryVC.swift in Sources */,
+				E188D2132C06AA0E005DD7E8 /* writeDiaryVC.swift in Sources */,
 				E12172A02C00CE5000821AF7 /* SceneDelegate.swift in Sources */,
 				E188D2112C062856005DD7E8 /* MyDiaryVC.swift in Sources */,
 				E108FB7E2C04288600E7874B /* FirebaseClient.swift in Sources */,
+				E1F30DDA2C07479C0043320A /* SigninVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

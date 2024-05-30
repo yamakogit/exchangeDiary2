@@ -47,7 +47,8 @@ class FirebaseClient {
                 id: userUid,
                 name: "",
                 iconURL: "",
-                groupUID: "",
+                groupUID: "", 
+                latestDate: "",
                 diary: [[:]]) //取得失敗->uuidのみreturn
         }
     }
@@ -96,7 +97,7 @@ class FirebaseClient {
     }
     
     
-    //getPartnerUID
+    //getPartnerUIDの取得 <- こっちでやる！
     func getPartnerUID() async throws -> String {
         var partnerUID = ""
         
@@ -142,8 +143,8 @@ class FirebaseClient {
     func getLatestDiary(userData: UserDataSet) async throws -> DiaryData {
         let diaries = userData.diary
         let matchingDiary = diaries.last ?? [:]
-        let matchingDiary_Struct = DiaryData(title: matchingDiary["title"]!, photoURL: matchingDiary["photoURL"]!, message: matchingDiary["message"]!, date: matchingDiary["date"]!)
-        return matchingDiary_Struct
+        let matchingDiaryStruct = DiaryData(title: matchingDiary["title"]!, photoURL: matchingDiary["photoURL"]!, message: matchingDiary["message"]!, date: matchingDiary["date"]!)
+        return matchingDiaryStruct
     }
     
     //URLよりStorageから写真の取得
@@ -160,6 +161,49 @@ class FirebaseClient {
         }
     }
     
+    //diaryの保存
+    //userDataへMyDiary/latestDateの保存 (Firestore)
+    func saveMyDiary(diary: DiaryData) async throws {
+        
+        var userData = try await getUserData()
+        let oneDiaryData = ["title": diary.title, "photoURL": diary.photoURL, "message": diary.message, "date": diary.date]
+        userData.diary.append(oneDiaryData)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        let date = dateFormatter.string(from: Date())
+        userData.latestDate = date
+        
+        let docRef = db.collection("User").document(userUid)
+        try docRef.setData(from: userData, merge: true) { error in
+            if let error = error {
+                print("Error updating document: \(error)") //失敗
+            } else {
+                print("Document successfully updated") //成功
+            }
+        }
+    }
+    
+    
+    //Storageへ写真の保存 & URLのRETURN
+    func saveDiaryImage(diaryImage: UIImage) async throws -> String {
+        let storageRef = storage.reference()
+        let imagesRef = storageRef.child("DiaryImage")
+        let imageName = "\(Date().timeIntervalSince1970).jpg"
+        let imageRef = imagesRef.child(imageName)
+        
+        if let imageData = diaryImage.jpegData(compressionQuality: 0.5) {
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            try await imageRef.putDataAsync(imageData, metadata: metadata)
+            let url: URL = try await imageRef.downloadURL()
+            let urlStr: String = url.absoluteString
+            return urlStr
+        } else {
+            return "https://firebasestorage.googleapis.com/v0/b/exchangediary-6acce.appspot.com/o/Host%2FRectangle%2012.png?alt=media&token=e05f31ec-77cf-40db-b527-1f6f36bb1dd9"
+        }
+    }
+    
     
     
     //DataSets
@@ -168,6 +212,7 @@ class FirebaseClient {
         var name: String
         var iconURL: String
         var groupUID: String
+        var latestDate: String
         var diary: [[String:String]]
     }
     

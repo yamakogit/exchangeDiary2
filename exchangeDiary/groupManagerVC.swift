@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SigninVC: UIViewController {
+class groupManagerVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
